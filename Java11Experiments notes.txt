@@ -1,0 +1,37 @@
+Check here all new features of Java 11 : https://openjdk.org/projects/jdk/11/
+
+Other useful links:
+    Introduction to the Java 11 HTTP Client with Chris Hegarty
+        https://www.youtube.com/watch?v=BornfFsSlc8
+
+    Spring RestTemplate vs WebClient or Java HttpClient
+        https://www.youtube.com/shorts/vas12Uao1UQ
+
+    Send HTTP GET Request using Java 11 HttpClient and parse JSON response into objects
+        https://www.youtube.com/watch?v=5MmlRZZxTqk
+
+JDK 11 new features
+
+    1.JEP 321: HTTP Client
+        Summary
+        Standardize the incubated HTTP Client API introduced in JDK 9, via JEP 110, and updated in JDK 10.
+        Provide a standardized API, in the java.net.http package, based upon the incubated API, and
+        Remove the incubated API.
+
+        This is a replacement of the old URLConnection API
+
+        The module name and the package name of the standard API will be java.net.http
+
+        Once build an HttpClient can be used multiple times. It is build using the builder pattern.
+
+        An HttpRequest is built using an HttpRequestBuilder, where the request URI is set, the HTTP method, the
+        request body, headers and timeout. An HttpRequest can be used multiple times.
+
+        An HttpResponse is not created directly, but is returned as a result of sending an HttpRequest.
+
+        Requests can be sent either synchronously or asynchronously.
+            Synchronous API blocks until an HttpResponse is available.
+            Asynchronous returns a CompletableFuture<HttpResponse>
+
+        BodyHandler interface allows inspection of the response code and headers before the actual response body is received.
+
